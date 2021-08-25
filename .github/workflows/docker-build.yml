@@ -7,7 +7,7 @@ jobs:
   Build-Docker-Image:
     runs-on: ubuntu-latest
     steps:
-      - run: cd docker
+      - run: cd /github/workspace/docker
       - run: docker build -t sixdeadbeefs/CTF:latest .
       - run: docker push sixdeadbeeds/CTF:latest      
 
