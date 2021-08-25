@@ -2,8 +2,7 @@ name: Update SixDeadBeefs Dockerhub Repo
 on:
   push:
     paths:
-      - 'Dockerfile'
-      - 'aliases'
+      - 'docker/*'
 jobs:
   Build-Docker-Image:
     runs-on: ubuntu-latest
