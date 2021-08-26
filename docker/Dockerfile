@@ -9,11 +9,11 @@ RUN apt-get update -y
 RUN apt-get install sudo -y
 
 #~~~~ KALI-LINUX-DEFAULT METAPACKAGE INSTALLATION ~~~~ 
-#RUN DEBIAN_FRONTEND=noninteractive apt-get install kali-linux-large -y
+RUN DEBIAN_FRONTEND=noninteractive apt-get install kali-linux-large -y
 
 #~~~~~ APT-GET PACKAGE UPGRADES && INSTALLATIONS ~~~~~
 RUN apt-get dist-upgrade -y
-#RUN pip3 install pwntools
+RUN pip3 install pwntools
 
 #~~~~~~~~~~~~~~~ ENVIRONMENT VARIABLES ~~~~~~~~~~~~~~~
 ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
