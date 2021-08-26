@@ -5,10 +5,10 @@ WORKDIR /root
 CMD source /root/.bashrc
 
 #~~~~ KALI-LINUX-DEFAULT METAPACKAGE INSTALLATION ~~~~ 
+RUN apt-get install sudo -y
 RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install kali-linux-large -y
 
 #~~~~~~~~~~~~~~~ PACKAGE INSTALLATIONS ~~~~~~~~~~~~~~~
-RUN apt-get install sudo -y
 RUN pip3 install pwntools
 
 #~~~~~~ PACKAGE REPO UPDATES && PACKAGE UPGRADE ~~~~~~
