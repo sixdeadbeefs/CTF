@@ -9,5 +9,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: docker build -t sixdeadbeefs/kali-ctf-default:latest docker/
-      - run: docker push sixdeadbeeds/kali-ctf-default:latest      
+      - run: docker push sixdeadbeefs/kali-ctf-default:latest      
 
