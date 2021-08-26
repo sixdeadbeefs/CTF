@@ -9,6 +9,7 @@ RUN apt-get update -y
 RUN apt-get install sudo -y
 
 #~~~~ KALI-LINUX-DEFAULT METAPACKAGE INSTALLATION ~~~~ 
+RUN DEBIAN_FRONTEND=noninteractive apt-get install kali-linux-core -y
 RUN DEBIAN_FRONTEND=noninteractive apt-get install kali-linux-large -y
 
 #~~~~~ APT-GET PACKAGE UPGRADES && INSTALLATIONS ~~~~~
