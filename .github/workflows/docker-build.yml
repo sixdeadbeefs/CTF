@@ -10,8 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         env:
-          DOCKERHUB: ${{secrets.DOCKERHUB}}
-      - run: $DOCKERHUB | docker login -u sixdeadbeefs
+          DOCKER_HUB_PASS: ${{secrets.DOCKER_HUB_PASS}}
+          DOCKER_HUB_USER: ${{secrets.DOCKER_HUB_USER}}
+      - run: echo $DOCKER_HUB_PASS | docker login --username $DOCKER_HUB_USER --password-stdin 
       - run: docker build -t sixdeadbeefs/kali-ctf-default:latest docker/
       - run: docker push sixdeadbeefs/kali-ctf-default:latest      
 
