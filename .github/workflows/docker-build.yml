@@ -23,13 +23,5 @@ jobs:
           context: docker/
           push: true
           tags: sixdeadbeefs/kali-ctf-default:latest
-          #cache-from: type=local,src=/tmp/.buildx-cache
-          #cache-to: type=local,dest=/tmp/.buildx-cache-new
           cache-from: type=gha
           cache-to: type=gha,mode=max
-      #- name: Move Cache
-        # run: |
-          rm -rf /tmp/.buildx-cache
-          mv /tmp/.buildx-cache-new /tmp/.buildx-cache
-      #i- run: docker build -t sixdeadbeefs/kali-ctf-default:latest docker/
-      #- run: docker push sixdeadbeefs/kali-ctf-default:latest      
