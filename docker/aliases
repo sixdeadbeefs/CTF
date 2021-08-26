@@ -6,3 +6,4 @@ alias p='python3'
 alias la="ls -la"
 alias e="echo working"
 alias p="echo working"
+alias f="echo working"
