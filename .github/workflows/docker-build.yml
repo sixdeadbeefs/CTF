@@ -4,13 +4,13 @@ on:
     paths:
       - 'docker/*'
 jobs:
-  Build-Docker-Image:
+  Dockerhub-Update:
+    name: Dockerhub Update
     runs-on: ubuntu-latest
     steps:
-      - shell: bash
+      - uses: actions/checkout@v2
         env:
           DOCKERHUB: ${{secrets.DOCKERHUB}}
-      - uses: actions/checkout@v2
       - run: $DOCKERHUB | docker login -u sixdeadbeefs
       - run: docker build -t sixdeadbeefs/kali-ctf-default:latest docker/
       - run: docker push sixdeadbeefs/kali-ctf-default:latest      
