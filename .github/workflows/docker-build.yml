@@ -15,12 +15,12 @@ jobs:
         uses: actions/checkout@v2
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
-      - name: Cache Docker layers
-        uses: actions/cache@v2
-        with:
-          path: /tmp/.buildx-cache
-          key: ${{ runner.os }}-buildx-${{ github.sha }}
-          restore-keys: |
+     # - name: Cache Docker layers
+      #  uses: actions/cache@v2
+       # with:
+        #  path: /tmp/.buildx-cache
+         # key: ${{ runner.os }}-buildx-${{ github.sha }}
+          #restore-keys: |
             ${{ runner.os }}-buildx-
       - name: Login to Dockerhub
         run: echo $DOCKER_HUB_PASS | docker login -u $DOCKER_HUB_USER --password-stdin
@@ -30,10 +30,12 @@ jobs:
           context: docker/
           push: true
           tags: sixdeadbeefs/kali-ctf-default:latest
-          cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,dest=/tmp/.buildx-cache-new
-      - name: Move Cache
-        run: |
+          #cache-from: type=local,src=/tmp/.buildx-cache
+          #cache-to: type=local,dest=/tmp/.buildx-cache-new
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+      #- name: Move Cache
+        # run: |
           rm -rf /tmp/.buildx-cache
           mv /tmp/.buildx-cache-new /tmp/.buildx-cache
       #i- run: docker build -t sixdeadbeefs/kali-ctf-default:latest docker/
