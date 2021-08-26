@@ -5,9 +5,9 @@ on:
       - 'docker/*'
 jobs:
   Build-Docker-Image:
-    - uses: actions/checkout@v2
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - run: cd $GITHUB_WORKSPACE/docker
       - run: docker build -t sixdeadbeefs/CTF:latest .
       - run: docker push sixdeadbeeds/CTF:latest      
