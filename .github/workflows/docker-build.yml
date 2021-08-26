@@ -16,8 +16,5 @@ jobs:
       - run: echo $DOCKER_HUB_USER
       - run: echo $TEST
       - run: docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASS 
-    steps:
       - run: docker build -t sixdeadbeefs/kali-ctf-default:latest docker/
-    steps:
       - run: docker push sixdeadbeefs/kali-ctf-default:latest      
-
