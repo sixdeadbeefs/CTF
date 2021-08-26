@@ -5,3 +5,4 @@ alias cc='clear && echo -en "\e[3J"'
 alias p='python3'
 alias la="ls -la"
 alias ll="ls -l"
+alias e="echo working"
