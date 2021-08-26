@@ -8,7 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: cd $GITHUB_WORKSPACE/docker
       - run: docker build -t sixdeadbeefs/ctf:latest docker/
-      - run: docker push sixdeadbeeds/ctf:latest      
+      - run: docker push sixdeadbeeds/CTF:latest      
 
