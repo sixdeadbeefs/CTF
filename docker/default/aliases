@@ -1,0 +1,7 @@
+alias l="ls"
+alias c="clear"
+alias sourcerc="source ~/.bashrc"
+alias cc='clear && echo -en "\e[3J"'
+alias p='python3'
+alias la="ls -la"
+alias ll="ls -l"
