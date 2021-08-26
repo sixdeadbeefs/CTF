@@ -4,23 +4,20 @@ MAINTAINER sixdeadbeefs <sixdeadbeefs@protonmail.com>
 WORKDIR /root
 CMD source /root/.bashrc
 
-#Update apt-get repos, and upgrade all outdated packages.
-RUN apt-get update && apt-get dist-upgrade -y
-
-#Install kali-linux-large meta-package with with DEBIAN_FRONTEND set
-#to noninteractive, otherwise the installation will prompt for user
-#input and the docker build command will fail. 
-RUN apt-get install sudo -y
+#~~~~ KALI-LINUX-DEFAULT METAPACKAGE INSTALLATION ~~~~ 
 RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install kali-linux-large -y
 
-RUN sudo apt-get update -y
+#~~~~~~~~~~~~~~~ PACKAGE INSTALLATIONS ~~~~~~~~~~~~~~~
+RUN apt-get install sudo -y
 RUN pip3 install pwntools
-RUN sudo apt-get upgrade -y
 
-#Setting JAVA home
+#~~~~~~ PACKAGE REPO UPDATES && PACKAGE UPGRADE ~~~~~~
+RUN apt-get update -y && apt-get dist-upgrade -y
+
+#~~~~~~~~~~~~~~~ ENVIRONMENT VARIABLES ~~~~~~~~~~~~~~~
 ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
 
-#Copying over .bashrc file because it has some useful aliases
+#~~~~~~~~~~~~~~~~~~ EDITING .BAHSRC ~~~~~~~~~~~~~~~~~~
 COPY aliases aliases
 RUN cat aliases >> .bashrc
 RUN rm aliases
