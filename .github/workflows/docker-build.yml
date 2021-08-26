@@ -7,6 +7,7 @@ jobs:
   Build-Docker-Image:
     runs-on: ubuntu-latest
     steps:
+      - shell: bash
         env:
           DOCKERHUB: ${{secrets.DOCKERHUB}}
       - uses: actions/checkout@v2
