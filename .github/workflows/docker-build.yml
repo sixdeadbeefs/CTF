@@ -7,7 +7,10 @@ jobs:
   Build-Docker-Image:
     runs-on: ubuntu-latest
     steps:
+        env:
+          DOCKERHUB: ${{secrets.DOCKERHUB}}
       - uses: actions/checkout@v2
+      - run: $DOCKERHUB | docker login -u sixdeadbeefs
       - run: docker build -t sixdeadbeefs/kali-ctf-default:latest docker/
       - run: docker push sixdeadbeefs/kali-ctf-default:latest      
 
