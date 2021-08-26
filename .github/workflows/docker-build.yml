@@ -7,12 +7,12 @@ jobs:
   Dockerhub-Update:
     name: Dockerhub Update
     runs-on: ubuntu-latest
+    env:
+      DOCKER_HUB_PASS: ${{secrets.DOCKER_HUB_PASS}}
+      DOCKER_HUB_USER: ${{secrets.DOCKER_HUB_USER}}
+      TEST: THISISATEST!!
     steps:
       - uses: actions/checkout@v2
-        env:
-          DOCKER_HUB_PASS: ${{secrets.DOCKER_HUB_PASS}}
-          DOCKER_HUB_USER: ${{secrets.DOCKER_HUB_USER}}
-          TEST: THISISATEST!!
       - run: echo $DOCKER_HUB_USER
       - run: echo $TEST
       - run: docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASS 
