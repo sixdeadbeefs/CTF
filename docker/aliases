@@ -4,4 +4,3 @@ alias sourcerc="source ~/.bashrc"
 alias cc='clear && echo -en "\e[3J"'
 alias p='python3'
 alias la="ls -la"
-alias lat="ls -lat"
