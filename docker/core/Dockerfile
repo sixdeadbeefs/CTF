@@ -15,7 +15,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install kali-linux-core -y
 
 #~~~~~ APT-GET PACKAGE UPGRADES && INSTALLATIONS ~~~~~
 RUN apt-get dist-upgrade -y
-RUN pip3 install pwntools
+RUN apt-get install python2.7 python-pip python-dev git -y
+RUN pip3 install --upgrade pip 
+RUN pip3 install --upgrade pwntools
 
 #~~~~~~~~~~~~~~~ ENVIRONMENT VARIABLES ~~~~~~~~~~~~~~~
 ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64

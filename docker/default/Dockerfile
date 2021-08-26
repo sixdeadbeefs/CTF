@@ -15,7 +15,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install kali-linux-large -y
 # TIME OF APPROX 50 MINS
 #~~~~~ APT-GET PACKAGE UPGRADES && INSTALLATIONS ~~~~~
 RUN apt-get dist-upgrade -y
-RUN pip3 install pwntools
+RUN pip3 install --upgrade pip 
+RUN pip3 install --upgrade pwntools
 
 #~~~~~~~~~~~~~~~ ENVIRONMENT VARIABLES ~~~~~~~~~~~~~~~
 ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
