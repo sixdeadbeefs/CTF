@@ -8,6 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: docker build -t sixdeadbeefs/ctf:latest docker/
-      - run: docker push sixdeadbeeds/CTF:latest      
+      - run: docker build -t sixdeadbeefs/kali-ctf-default:latest docker/
+      - run: docker push sixdeadbeeds/kali-ctf-default:latest      
 
