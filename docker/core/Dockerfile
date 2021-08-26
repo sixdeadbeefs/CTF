@@ -15,7 +15,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install kali-linux-core -y
 
 #~~~~~ APT-GET PACKAGE UPGRADES && INSTALLATIONS ~~~~~
 RUN apt-get dist-upgrade -y
-RUN apt-get install python2.7 python-pip python-dev git -y
+RUN apt-get install python3-pip python-dev git -y
 RUN pip3 install --upgrade pip 
 RUN pip3 install --upgrade pwntools
 
