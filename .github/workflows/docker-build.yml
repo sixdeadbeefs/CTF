@@ -12,6 +12,8 @@ jobs:
         env:
           DOCKER_HUB_PASS: ${{secrets.DOCKER_HUB_PASS}}
           DOCKER_HUB_USER: ${{secrets.DOCKER_HUB_USER}}
+      - run: echo $DOCKER_HUB_USER
+      - run: echo $DOCKER_HUB_PASS
       - run: docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASS 
       - run: docker build -t sixdeadbeefs/kali-ctf-default:latest docker/
       - run: docker push sixdeadbeefs/kali-ctf-default:latest      
