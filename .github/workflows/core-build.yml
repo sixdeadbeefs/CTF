@@ -2,7 +2,8 @@ name: Update SixDeadBeefs Dockerhub Repo
 on:
   push:
     paths:
-      - 'docker/core/*'
+      - 'docker/core/Dockerfile'
+      - 'docker/core/aliases'
 jobs:
   Dockerhub-Update:
     name: Dockerhub Update
