@@ -17,6 +17,12 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install kali-linux-large -y
 RUN apt-get dist-upgrade -y
 RUN pip3 install --upgrade pip 
 RUN pip3 install --upgrade pwntools
+RUN sudo dpkg --add-architecture i386
+RUN sudo apt-get install libc6-i386 -y
+
+#~~~~~~~~~~~~~~~~~ SETTING UP PWNDBG ~~~~~~~~~~~~~~~~~
+RUN git clone https://github.com/pwndbg/pwndbg
+RUN cd pwndbg && ./setup.sh
 
 #~~~~~~~~~~~~~~~ ENVIRONMENT VARIABLES ~~~~~~~~~~~~~~~
 ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
