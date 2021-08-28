@@ -25,5 +25,6 @@ ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
 COPY aliases aliases
 RUN cat aliases >> .bashrc
 RUN rm aliases
+
 #~~~~~~~~~~~~~~~ FINAL PACKAGE UPGRADE ~~~~~~~~~~~~~~~
 RUN apt-get upgrade -y

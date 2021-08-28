@@ -27,4 +27,5 @@ COPY aliases aliases
 RUN cat aliases >> .bashrc
 RUN rm aliases
 
+#~~~~~~~~~~~~~~~ FINAL PACKAGE UGRADE ~~~~~~~~~~~~~~~
 RUN apt-get upgrade -y
