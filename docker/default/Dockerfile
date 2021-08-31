@@ -27,8 +27,11 @@ RUN cd pwndbg && ./setup.sh
 #~~~~~~~~~~~~~~~ ENVIRONMENT VARIABLES ~~~~~~~~~~~~~~~
 ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
 
-#~~~~~~~~~~~~~~~~~~ EDITING .VIMRC ~~~~~~~~~~~~~~~~~~
-ADD .vimrc .vimrc
+#~~~~~~~~~~~~~~~~~~ SETTING UP TMUX ~~~~~~~~~~~~~~~~~~
+COPY .tmux.conf .
+
+#~~~~~~~~~~~~~~~~~~~ EDITING VIMRC ~~~~~~~~~~~~~~~~~~~
+COPY .vimrc .vimrc
 
 #~~~~~~~~~~~~~~~~~~ EDITING .BAHSRC ~~~~~~~~~~~~~~~~~~
 COPY aliases aliases
