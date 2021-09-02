@@ -19,7 +19,7 @@ RUN apt-get install python3-pip python-dev git -y
 RUN pip3 install --upgrade pip 
 RUN pip3 install --upgrade pwntools
 RUN sudo dpkg --add-architecture i386
-RUN sudo apt-get install libc6-i386 -y
+RUN sudo apt-get install libc6-i386 ltrace strace -y
 
 #~~~~~~~~~~~~~~~~~ SETTING UP PWNDBG ~~~~~~~~~~~~~~~~~
 RUN git clone https://github.com/pwndbg/pwndbg
