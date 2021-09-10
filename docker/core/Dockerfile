@@ -16,6 +16,7 @@ RUN apt-get install python3-pip\
 	git\
 	sudo\
 	vim\
+	man\
 	dirb\
 	nmap\
 	wordlists\
